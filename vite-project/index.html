@@ -1,13 +1,271 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>vite-project</title>
+    <meta
+      name="description"
+      content="정보 교사 노수지의 관심 분야와 이번 학기 배움, 기말 프로젝트 목표를 소개합니다."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>노수지 | 자기소개</title>
   </head>
   <body>
-    <div id="app"></div>
+    <canvas id="starfield" aria-hidden="true"></canvas>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <header class="site-header" aria-label="주요 메뉴">
+      <a class="brand" href="#top" aria-label="노수지 자기소개 첫 화면으로 이동">NSJ<span>.</span></a>
+      <nav aria-label="페이지 메뉴">
+        <a href="#about">소개</a>
+        <a href="#semester">이번 학기</a>
+        <a href="#goal">목표</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="다크 모드로 전환" aria-pressed="false">
+        <span class="theme-icon" aria-hidden="true">☾</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-glow glow-one" aria-hidden="true"></div>
+        <div class="hero-glow glow-two" aria-hidden="true"></div>
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-cosmos" aria-hidden="true">
+          <div class="hero-planet"><span>TEACH<br />×<br />CODE</span></div>
+          <div class="hero-moon"></div>
+          <div class="hero-astronaut"><i></i><b></b><span></span></div>
+          <div class="hero-orbit"></div>
+          <span class="cosmos-coordinate coordinate-one">37° 27′ N</span>
+          <span class="cosmos-coordinate coordinate-two">CLASSROOM · EARTH</span>
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow">NO SOOJI · A CONSTELLATION OF ONE</p>
+          <p class="hero-name">노수지의 우주</p>
+          <h1 id="hero-title">배움의 우주로<br /><span>출발합니다.</span></h1>
+          <p class="hero-subtitle">고등학교 정보·인공지능 교사 <strong>노수지</strong>가<br />기술과 수업, 연구를 하나의 궤도로 연결하는 여정</p>
+          <a class="hero-link" href="#mission">여정 시작하기 <span aria-hidden="true">↓</span></a>
+        </div>
+        <p class="scroll-cue" aria-hidden="true"><span></span> SCROLL TO EXPLORE</p>
+      </section>
+
+      <section id="mission" class="mission" aria-labelledby="mission-title">
+        <p class="eyebrow">THE BRIEF · MY NORTH STAR</p>
+        <h2 id="mission-title">기술로 수업을 바꾸고,<br />학생의 가능성을 <em>깨우다.</em></h2>
+        <p class="mission-note">코드 한 줄에서 시작해, 학생의 생각과 참여가 살아나는 교실까지.</p>
+        <div class="mission-orbit" aria-hidden="true"><span>IDEAS<br />IN<br />ORBIT</span></div>
+        <span class="mission-coordinate" aria-hidden="true">MISSION 001 · TEACHING WITH TECHNOLOGY</span>
+      </section>
+
+      <section class="trajectory space-scene" aria-labelledby="trajectory-title">
+        <div class="scene-heading">
+          <p class="scene-index">CHAPTER 01 · 2016—2020</p>
+          <h2 id="trajectory-title" data-split>만들고 도전하며<br />궤도를 넓혔습니다.</h2>
+          <p>교육의 문제를 기술로 풀던 시도들이 지금의 교실과 연구로 이어졌습니다.</p>
+        </div>
+        <div class="trajectory-layout">
+          <div class="trajectory-orbit" aria-hidden="true">
+            <div class="orbit-core"><span>2016<br />—<br />2020</span></div>
+            <i class="orbit-path path-one"></i><i class="orbit-path path-two"></i><i class="orbit-path path-three"></i>
+          </div>
+          <ol class="timeline-list">
+            <li><time>2016</time><div><strong>교육 기회의 첫 신호</strong><p>교육 기회 불균형을 줄이는 웹서비스 「Stufit」으로 수원 ICT 대회 수원시장상을 수상했습니다.</p></div></li>
+            <li><time>2016—17</time><div><strong>미니뮤지엄 · 덱스</strong><p>스타트업 캠퍼스에서 미술교육 학생 자료 관리 플랫폼과 화가를 위한 모바일 도록을 만들었습니다.</p></div></li>
+            <li><time>2017</time><div><strong>국경을 넘은 보조공학</strong><p>한국 대표 학생으로 UAE 보조공학 해커톤에 참여해 시각장애인의 시장 정보 접근 서비스 「MarketIsee」를 기획·개발했습니다.</p></div></li>
+            <li><time>2017—18</time><div><strong>글로벌 도전과 블록체인</strong><p>베트남 Global Challenge 분단장, SOPT 「코코차트」를 거쳐 소프트웨어 마에스트로 9기에서 dApp 개발 솔루션 「체이닝」을 완성했습니다.</p></div></li>
+            <li><time>2018</time><div><strong>더 넓은 세계를 배우다</strong><p>퀄컴 WETECH 장학생으로 선정되고, 스위스 제네바 UN본부 트레이닝에 참여했습니다.</p></div></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="security space-scene" aria-labelledby="security-title">
+        <div class="security-grid" aria-hidden="true"></div>
+        <div class="radar" aria-hidden="true"><span></span><i></i><b></b></div>
+        <div class="security-copy">
+          <p class="scene-index">CHAPTER 02 · SYSTEM LOG / 2020</p>
+          <h2 id="security-title" data-split>보안을 파고들고,<br /><em>AI를 연결했습니다.</em></h2>
+          <p>시스템의 안쪽을 이해하는 훈련은 기술을 더 안전하고 정확하게 다루는 기반이 되었습니다.</p>
+        </div>
+        <div class="terminal" role="img" aria-label="2020년 AI 보안 포트폴리오 주요 내용">
+          <div class="terminal-bar"><span></span><span></span><span></span><small>nsj@security-lab:~</small></div>
+          <p><b>$</b> analyze ransomware --sample clop</p>
+          <p class="terminal-output">패킹 해제 · 리버스 엔지니어링</p>
+          <p><b>$</b> secure network --ids snort --cloud aws</p>
+          <p class="terminal-output">방화벽 · DMZ · 웹 취약점 점검</p>
+          <p><b>$</b> train vision --model densenet</p>
+          <p class="terminal-output">딥러닝 이미지 검색 · ML 기반 SQL 인젝션 탐지 <i class="terminal-cursor"></i></p>
+        </div>
+      </section>
+
+      <section id="about" class="section reveal" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="section-number">01</p>
+          <div>
+            <p class="eyebrow">THE EXPLORER · ABOUT ME</p>
+            <h2 id="about-title">배움과 기술 사이를<br />탐험합니다.</h2>
+          </div>
+        </div>
+        <div class="about-card">
+          <div class="about-copy">
+            <p class="lead">정보(컴퓨터) 교사로서, 기술이 학생의 생각과 참여를 이끄는 수업을 고민합니다.</p>
+            <p>코드를 배우는 데서 그치지 않고, 웹앱을 통해 교실의 경험을 새롭게 설계하는 일에 관심이 있습니다.</p>
+            <p>2023년 처음 교실에 선 뒤 AI·에듀테크 선도교사단과 디지털 역량강화 연수 주강사로 경험을 나누고 있습니다.</p>
+          </div>
+          <div class="interests" aria-labelledby="interest-title">
+            <h3 id="interest-title">제가 탐색하는 궤도</h3>
+            <div class="chip-list">
+              <button class="chip" type="button" aria-pressed="false">AI 교육</button>
+              <button class="chip" type="button" aria-pressed="false">웹앱 수업 설계</button>
+              <button class="chip" type="button" aria-pressed="false">코딩 교육</button>
+              <button class="chip" type="button" aria-pressed="false">데이터 교육</button>
+              <button class="chip" type="button" aria-pressed="false">학생 상호작용 도구</button>
+            </div>
+            <p class="chip-hint">관심 키워드를 눌러 궤도에 올려 보세요.</p>
+          </div>
+        </div>
+        <div class="classroom-console">
+          <div><span>NOW · 2026</span><strong>서울온라인학교</strong><p>정보 · 인공지능 기초 교사<br />교내 정보안전팀 보안 담당</p></div>
+          <div><span>CLASSROOM LAB</span><strong>학생이 직접 푸는 수업</strong><p>차시별 설명, 확인 문제, 코드 조각, 결정 트리 체험과 학생별 진도·개념 학습 시간을 보는 교사용 대시보드를 설계·개발해 운영합니다.</p></div>
+          <div><span>GRADUATE SCHOOL</span><strong>서울대학교 AI융합교육</strong><p>사범대학 계약학과 석사 과정 6기 재학 중</p></div>
+        </div>
+      </section>
+
+      <section class="impact" aria-labelledby="impact-title">
+        <div class="impact-copy">
+          <p class="eyebrow">A CELESTIAL INTERVENTION</p>
+          <h2 id="impact-title">교실이라는 세계에<br /><em>새로운 궤도</em>를 만들다.</h2>
+          <p>기술은 목적지가 아니라 학생의 생각을 더 멀리 보내는 도구입니다. 웹앱으로 수업의 경험을 설계하고, 배움이 움직이는 순간을 만들고 싶습니다.</p>
+        </div>
+        <div class="impact-art" aria-hidden="true">
+          <div class="impact-ring"></div>
+          <div class="impact-world"><span>LEARN<br />TOGETHER</span></div>
+          <i class="impact-moon"></i><i class="impact-star star-a"></i><i class="impact-star star-b"></i>
+        </div>
+      </section>
+
+      <section id="semester" class="journey" aria-labelledby="semester-title">
+        <div class="journey-intro">
+          <p class="section-number">02</p>
+          <p class="eyebrow">THIS SEMESTER · THE JOURNEY SO FAR</p>
+          <h2 id="semester-title">배움은 교실을 향해<br /><span>계속 이어집니다.</span></h2>
+          <p>스크롤을 내릴 때마다 이번 학기의 다음 장면이 열립니다.</p>
+        </div>
+        <div class="journey-layout">
+          <div class="journey-stage" data-stage="0" aria-hidden="true">
+            <div class="stage-stars"></div>
+            <div class="stage-orbit orbit-a"></div>
+            <div class="stage-orbit orbit-b"></div>
+            <div class="stage-planet"><span class="planet-mark">01</span></div>
+            <p class="stage-caption"><span class="stage-kicker">MY LEARNING ORBIT</span><strong class="stage-name">기초를 쌓는 중</strong></p>
+            <span class="stage-coordinate">SEOUL · 2026</span>
+          </div>
+          <ol class="journey-steps">
+            <li class="journey-step is-active" data-stage="0">
+              <span class="step-index">01 / LEARN</span>
+              <h3>기초 프로그래밍 수강</h3>
+              <p>서울대 대학원 ‘융합교육을 위한 기초 프로그래밍’ 수업에서 새로운 가능성의 기반을 다집니다.</p>
+            </li>
+            <li class="journey-step" data-stage="1">
+              <span class="step-index">02 / BUILD</span>
+              <h3>아이디어를 웹앱으로</h3>
+              <p>배운 것을 직접 작동하는 웹앱으로 만들며, 아이디어가 경험으로 바뀌는 과정을 익힙니다.</p>
+            </li>
+            <li class="journey-step" data-stage="2">
+              <span class="step-index">03 / CONNECT</span>
+              <h3>수업과 기술을 연결하기</h3>
+              <p>기술을 교실에 가져와 학생이 더 많이 생각하고 참여할 수 있는 배움으로 연결합니다.</p>
+            </li>
+          </ol>
+        </div>
+        <div class="research-deck">
+          <article>
+            <span>RESEARCH QUESTION · 01</span>
+            <h3>생성형 AI 시대,<br />사람의 가치판단은 어디에 남는가?</h3>
+            <p>구현 노동이 줄어들수록 무엇을 목표로 삼고 어떤 결과를 좋은 것으로 판단할지, 사람의 보상함수는 더 중요해집니다.</p>
+          </article>
+          <article>
+            <span>WORLD SPEC · 02</span>
+            <h3>학생의 관심을<br />실험 가능한 세계로.</h3>
+            <p>학생의 관심을 변수로 옮기고 「World Spec」 시뮬레이션에서 직접 실험하게 하는 AI 대화형 데이터 사이언스 수업을 연구합니다.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="mission-control reveal" aria-label="이번 여정의 기록">
+        <p class="eyebrow">MISSION CONTROL · CURRENT COORDINATES</p>
+        <div class="mission-metrics">
+          <div><strong>03</strong><span>여정의 단계</span></div>
+          <div><strong>05</strong><span>탐색 중인 관심 분야</span></div>
+          <div><strong>01</strong><span>다음 프로젝트</span></div>
+        </div>
+        <p class="metrics-footnote">지금까지 소개한 배움과 관심, 그리고 다음 목표를 담았습니다.</p>
+      </section>
+
+      <section class="projects space-scene" aria-labelledby="projects-title">
+        <div class="scene-heading">
+          <p class="scene-index">CHAPTER 05 · THINGS IN ORBIT</p>
+          <h2 id="projects-title" data-split>생각을 작동하는<br />경험으로 만듭니다.</h2>
+        </div>
+        <div class="project-orbit" aria-hidden="true"></div>
+        <div class="project-grid">
+          <article class="project-card card-xr"><span>01 · XR CLASS</span><div class="project-symbol">⌁</div><h3>메인보드 탐험</h3><p>Aximmetry로 컴퓨터 안을 탐험하는 3D 수업 콘텐츠</p><small>EXPLORE THE MACHINE</small></article>
+          <article class="project-card card-brain"><span>02 · BRAIN SWITCH</span><div class="project-symbol">⌁⌁</div><h3>뇌파 스위치</h3><p>TGAM 키트로 눈 두 번 깜빡임과 집중도를 감지해 불을 켜고 끄는 가상 헤드셋 데모</p><small>SIGNAL TO ACTION</small></article>
+          <article class="project-card card-shorts"><span>03 · SHORTS LAB</span><div class="project-symbol">▶</div><h3>집을살림</h3><p>제품 소개 숏폼을 만들고 자동화하는 쇼핑 쇼츠 채널</p><small>100 STORIES IN 2026</small></article>
+          <article class="project-card card-rl"><span>04 · OPEN NOTES</span><div class="project-symbol">∑</div><h3>강화학습 강의 노트</h3><p>복잡한 강화학습 개념을 수업 가능한 언어와 장면으로 정리하는 시리즈</p><small>LEARN · TEST · SHARE</small></article>
+        </div>
+      </section>
+
+      <section id="goal" class="section reveal" aria-labelledby="goal-title">
+        <div class="section-heading">
+          <p class="section-number">03</p>
+          <div>
+            <p class="eyebrow">THE NEXT FRONTIER</p>
+            <h2 id="goal-title">다음 목적지는<br />실제 교실입니다.</h2>
+          </div>
+        </div>
+        <div class="goal-card">
+          <p class="goal-kicker">FINAL PROJECT · BUILD FOR THE CLASSROOM</p>
+          <p class="goal-statement">수업에서 바로 쓰는<br /><em>LLM 기반 웹앱</em><br />만들기</p>
+          <div class="goal-orbit" aria-hidden="true"><span>LLM</span></div>
+          <span class="goal-coordinate" aria-hidden="true">DESTINATION · A MORE PARTICIPATORY CLASSROOM</span>
+        </div>
+        <div class="future-route" aria-label="앞으로의 진로 경로">
+          <div><span>NOW</span><strong>교사</strong><p>교육 현장의 문제를 발견합니다.</p></div>
+          <i aria-hidden="true"></i>
+          <div><span>NEXT</span><strong>석·박사</strong><p>AI와 데이터로 검증합니다.</p></div>
+          <i aria-hidden="true"></i>
+          <div><span>DESTINATION</span><strong>연구자·교수</strong><p>수업의 변화를 연구로 남깁니다.</p></div>
+        </div>
+      </section>
+
+      <section class="closing reveal" aria-labelledby="closing-title">
+        <div class="constellation" aria-hidden="true">
+          <svg viewBox="0 0 700 480" role="presentation">
+            <path class="constellation-line" d="M82 350 L188 244 L294 305 L375 164 L492 220 L610 105" />
+            <g class="constellation-stars"><circle cx="82" cy="350" r="7"/><circle cx="188" cy="244" r="9"/><circle cx="294" cy="305" r="6"/><circle cx="375" cy="164" r="10"/><circle cx="492" cy="220" r="7"/><circle cx="610" cy="105" r="9"/></g>
+          </svg>
+        </div>
+        <p class="eyebrow">CHAPTER 08 · CONSTELLATION COMPLETE</p>
+        <h2 id="closing-title" data-split>현장에서 발견하고,<br /><em>만들고, 연구합니다.</em></h2>
+        <p class="closing-summary">교사에서 연구자·교수로. 교육 현장의 문제를 AI·데이터로 직접 풀고 연구로 남기는 사람.</p>
+        <span class="contact-placeholder">[연락처 링크 추가 예정]</span>
+        <div class="closing-orbit" aria-hidden="true"><span>SEE YOU<br />IN CLASS</span></div>
+      </section>
+
+      <section class="quote-section reveal" aria-labelledby="quote-title">
+        <p class="eyebrow">A NOTE FOR TODAY</p>
+        <h2 id="quote-title">오늘의 한마디</h2>
+        <blockquote id="quote" aria-live="polite">“좋은 수업은 정답보다 새로운 질문을 남깁니다.”</blockquote>
+        <button id="quote-button" class="quote-button" type="button">새로운 한마디 <span aria-hidden="true">↻</span></button>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>노수지</strong> · 정보(컴퓨터) 교사</p>
+      <a href="https://github.com/SoojiNoh" target="_blank" rel="noreferrer" aria-label="노수지 GitHub 프로필 새 창에서 열기">
+        GitHub <span aria-hidden="true">↗</span>
+      </a>
+    </footer>
+
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
